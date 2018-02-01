@@ -1,0 +1,24 @@
+<html>
+
+<cfajaximport params="#{googlemapkey='YourGoogleMapsAPIKeyHere'}#" />
+
+<head>
+<script type="text/javascript">
+    function cfmap_onError(mapStatusCode, errorMessage) {
+        alert("Uh oh, I wasn't able to find the specified address.\ncode: " + mapStatusCode);
+    }
+
+    function cfmap_onLoad() {
+        alert("Map is loading.");
+    }
+</script>
+</head>
+<body style="padding:20px;">
+
+    <cfmap name="map01"
+            centerAddress="Qwertyville"
+            onError="cfmap_onError"
+            onLoad="cfmap_onLoad" />
+
+</body>
+</html>
